@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dota 2 для новичков: гайд и настройки | morfikshops</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Inter:wght@400;600;700&display=swap">
+<style>
+:root{--bg:#f6f0ea;--ink:#231313;--mute:#6a5a58;--card:#fff;--line:#e6d8d2;--r:#b91c1c;--g:#c98f0a;--chip:#f3e4de;--ok:#16a34a;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#120a0a;--ink:#f6ebe7;--mute:#b39d98;--card:#1d1212;--line:#3a2323;--r:#ef4444;--g:#fbbf24;--chip:#2a1818;--ok:#4ade80}}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Inter,"Segoe UI",system-ui,sans-serif;background-image:radial-gradient(40rem 20rem at 100% 0%,#b91c1c33,transparent 60%)}
+main{max-width:860px;margin:0 auto;padding:18px 14px 44px}
+.by{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.85rem}
+.by i{width:24px;height:24px;border-radius:7px;background:var(--r);color:#fff;display:grid;place-items:center;font:700 .8rem Oswald,sans-serif;font-style:normal}
+h1{font:700 clamp(2.4rem,11vw,4.4rem)/1 Oswald,"Arial Narrow",sans-serif;text-transform:uppercase;letter-spacing:.01em;margin:14px 0 8px}
+h1 span{color:var(--r)}
+.lead{color:var(--mute);max-width:34rem;margin:0 0 12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:6px}
+.chips b{background:var(--chip);border-radius:8px;padding:4px 10px;font-size:.8rem}
+h2{font:700 1.5rem Oswald,sans-serif;text-transform:uppercase;margin:30px 0 4px;display:flex;gap:10px;align-items:center}
+h2:before{content:"";width:6px;height:1.1em;background:var(--r);border-radius:2px}
+.sub{color:var(--mute);margin:0 0 12px;font-size:.92rem}
+.grid{display:grid;gap:10px}
+@media(min-width:720px){.g2{grid-template-columns:1fr 1fr}}
+.c{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px}
+.c h3{margin:0 0 2px;font:700 1.1rem Oswald,sans-serif;letter-spacing:.02em}
+.c h3 small{color:var(--g);font-size:.75rem;margin-right:8px}
+.c p{margin:0;color:var(--mute);font-size:.92rem}
+label.t{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;cursor:pointer}
+label.t input{width:20px;height:20px;margin-top:2px;accent-color:var(--r);flex:none}
+label.t b{display:block}
+label.t span{color:var(--mute);font-size:.9rem}
+label.t:has(input:checked){border-color:var(--ok)}
+label.t:has(input:focus-visible){outline:3px solid var(--g);outline-offset:2px}
+.row{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid var(--line);font-size:.93rem}
+.row:first-child{border-top:0}
+.row span{color:var(--mute);flex:1}
+.row b{text-align:right;color:var(--r);white-space:nowrap}
+pre{margin:0;padding:12px 14px;overflow-x:auto;font:14px/1.5 ui-monospace,Menlo,Consolas,monospace;background:var(--chip);border-radius:10px}
+button{font:700 .95rem Inter,sans-serif;padding:11px 18px;border:0;border-radius:10px;background:var(--r);color:#fff;cursor:pointer}
+button:focus-visible{outline:3px solid var(--g);outline-offset:2px}
+.gift{margin-top:30px;background:linear-gradient(135deg,#7f1d1d,#b91c1c);color:#fff;border-radius:22px;padding:20px}
+.gift h2{margin:0 0 4px;color:#fff}.gift h2:before{background:#fbbf24}
+.gift>p{margin:0 0 12px;opacity:.9}
+.q{background:#1a0d0d;border-radius:16px;padding:16px}
+.q small{opacity:.6}
+.q .s{font-size:1.05rem;font-weight:700;margin:6px 0 12px}
+.q .o{display:grid;gap:8px}
+.q .o button{background:#2d1818;text-align:left;font-weight:600;color:#fff;border:1px solid #4a2929}
+.q .nx{background:#fbbf24;color:#1a0d0d;width:100%;margin-top:10px}
+.q h3{font:700 1.7rem Oswald,sans-serif;text-transform:uppercase;margin:4px 0;color:#fbbf24}
+.q .hr{margin:10px 0;font-weight:700}
+.brand{margin-top:28px;border-radius:22px;text-align:center;padding:26px 16px;background:var(--card);border:1px solid var(--line)}
+.brand b{font:700 clamp(1.4rem,6vw,2rem)/1.15 Oswald,sans-serif;text-transform:uppercase;display:block}
+.brand em{font-style:normal;color:var(--r)}
+.brand p{margin:8px 0 4px;font-weight:700}
+.brand span{color:var(--mute);font-size:.9rem}
+.it{display:grid;grid-template-columns:auto 1fr;gap:2px 12px;align-items:center}
+.it .e{grid-row:span 2;font-size:1.6rem}
+.it b{font:700 1rem Oswald,sans-serif;letter-spacing:.02em}
+.it span{color:var(--mute);font-size:.88rem}
+input.f{width:100%;font:600 1rem Inter,sans-serif;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink);margin-bottom:10px}
+input.f:focus-visible{outline:3px solid var(--g);outline-offset:2px}
+.tm b{color:var(--r);font:700 1.05rem Oswald,sans-serif;letter-spacing:.02em}
+.q .fb{margin:12px 0 0;font-weight:600}
+</style>
+</head>
+<body>
+<main>
+<div class="by"><i>m</i>Сделал morfikshops</div>
+<h1>Dota 2 <span>для новичков</span></h1>
+<p class="lead">Основы, роли, первые 10 игр и правильные настройки. Читай по порядку и отмечай выполненное.</p>
+<div class="chips"><b>⏱ 10 минут</b><b>⚙️ Готовые настройки</b><b>🎁 Тренажёр</b></div>
+
+<h2>Основы за минуту</h2>
+<div class="c"><p>Две команды по 5 героев. Цель: сломать главное здание врага, Древнего. Путь к нему идёт по трём линиям (верх, центр, низ), где ходят крипы и стоят башни. Между линиями лес с нейтральными монстрами. Золото и опыт даёт добивание крипов и убийства героев. Сильный Рошан (босс в яме) даёт команде бонус, но сначала научись выживать и добивать.</p></div>
+
+<h2>5 позиций</h2>
+<p class="sub">Каждый игрок в команде занимает свою роль.</p>
+<div class="grid g2">
+<div class="c"><h3><small>ПОЗ. 1</small>Керри</h3><p>Фармит золото и становится главной силой во второй половине игры.</p></div>
+<div class="c"><h3><small>ПОЗ. 2</small>Мид</h3><p>Играет по центру, быстро растёт и давит врага ранними убийствами.</p></div>
+<div class="c"><h3><small>ПОЗ. 3</small>Оффлейнер</h3><p>Берёт сложную линию, держит её и начинает драки.</p></div>
+<div class="c"><h3><small>ПОЗ. 4</small>Саппорт</h3><p>Двигается по карте, устраивает засады и помогает союзникам.</p></div>
+<div class="c"><h3><small>ПОЗ. 5</small>Хард-саппорт</h3><p>Ставит варды, защищает керри и отдаёт золото команде.</p></div>
+</div>
+
+<h2>Первые 10 игр</h2>
+<p class="sub">Отмечай, что уже делаешь. Шкала внизу покажет прогресс.</p>
+<div class="grid" id="ck"></div>
+<div class="c" style="margin-top:10px"><b id="pc">0 из 8</b> выполнено</div>
+
+<h2>Настройки в игре</h2>
+<p class="sub">Шестерёнка (Настройки) → Опции → Игра. Названия могут чуть отличаться в твоей версии клиента.</p>
+<div class="c">
+<div class="row"><span>Auto Attack (автоатака)</span><b>Standard</b></div>
+<div class="row"><span>Double Tap Ability to Self Cast</span><b>Вкл</b></div>
+<div class="row"><span>Smart Double Tap</span><b>Вкл</b></div>
+<div class="row"><span>Disable Auto Attack When Stop is Held</span><b>Вкл</b></div>
+<div class="row"><span>Toggle Auto Attack Automatically</span><b>Выкл</b></div>
+<div class="row"><span>Summoned Unit Auto Attack</span><b>Standard</b></div>
+<div class="row"><span>Shop Always Uses Hotkeys</span><b>Выкл</b></div>
+<div class="row"><span>Center Camera on Hero on Respawn</span><b>Выкл</b></div>
+<div class="row"><span>Use Extra Large Minimap</span><b>Вкл</b></div>
+<div class="row"><span>Quick Attack / Quick Move</span><b>По вкусу</b></div>
+</div>
+<p class="sub" style="margin-top:8px">💡 Quick Cast нравится не всем: если ещё не знаешь радиусы умений, пока оставь выключенным.</p>
+
+<h2>Параметры запуска</h2>
+<p class="sub">Steam → Библиотека → Dota 2 → Свойства → Общие → Параметры запуска. Вставь это:</p>
+<pre id="lo">-novid -map dota</pre>
+<p style="margin:10px 0 0"><button id="cp">Скопировать</button></p>
+<p class="sub" style="margin-top:8px">Первое убирает вступительный ролик, второе заранее грузит карту: запуск чуть дольше, но в матч заходишь плавнее.</p>
+
+<h2>Что купить на старте</h2>
+<p class="sub">Базовые предметы, которые пригодятся почти всем.</p>
+<div class="grid g2">
+<div class="c it"><span class="e">📜</span><b>Town Portal Scroll</b><span>Свиток телепортации к башне. Носи всегда, спасает в любой ситуации.</span></div>
+<div class="c it"><span class="e">🌿</span><b>Tango</b><span>Лечит, если съесть дерево. Дёшево, подходит для ранней игры.</span></div>
+<div class="c it"><span class="e">🧴</span><b>Healing Salve</b><span>Быстрое лечение, но срывается, если получишь урон.</span></div>
+<div class="c it"><span class="e">💧</span><b>Clarity</b><span>Восстанавливает ману. Нужен тем, кто много использует умения.</span></div>
+<div class="c it"><span class="e">👢</span><b>Boots of Speed</b><span>Базовая скорость. Из них собираются все улучшенные ботинки.</span></div>
+<div class="c it"><span class="e">👁</span><b>Observer Ward</b><span>Вард даёт обзор на карте. Закупка для саппортов.</span></div>
+</div>
+
+<h2>Словарь сленга</h2>
+<p class="sub">Начни вводить слово, чтобы найти.</p>
+<input class="f" id="sr" type="search" placeholder="Например: ганк" aria-label="Поиск по словарю">
+<div class="grid" id="gl"></div>
+
+<div class="gift">
+<h2>🎁 Подарок: тренажёр «Что делать?»</h2>
+<p>8 ситуаций из игры. Выбирай решение и получи свой ранг мышления.</p>
+<div class="q" id="quiz"></div>
+</div>
+
+<div class="brand"><b>Спасибо за покупку! ❤️</b><p>Ждём вас ещё в <em>morfikshops</em></p><span>Буду благодарен за оставленный отзыв ⭐</span></div>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+const CK=[
+["Играй 1–2 героями","Не меняй героев каждую игру: так быстрее поймёшь, как они работают."],
+["Добивай крипов","Учись последнему удару: это главный источник золота в начале."],
+["Смотри на миникарту","Раз в пару секунд. Так ты заметишь, куда пошли враги."],
+["Не уходи далеко без обзора","Без вардов или союзников дальний лес и чужая территория опасны."],
+["Не умирай зря","Каждая смерть это потерянное золото и время. Отступай, когда здоровья мало."],
+["Не ругайся в чате","Токсичность никого не усиливает. Мьють плохих собеседников, играй дальше."],
+["Купи курьера, если ты саппорт","Он носит предметы и экономит время всей команде."],
+["Смотри повторы своих игр","Разбор своих смертей даёт больше, чем десять новых игр подряд."]
+];
+$("ck").innerHTML=CK.map(c=>`<label class="t"><input type="checkbox"><span><b>${c[0]}</b><span>${c[1]}</span></span></label>`).join("");
+function up(){const n=document.querySelectorAll("#ck input:checked").length;$("pc").textContent=n+" из 8"}
+document.querySelectorAll("#ck input").forEach(i=>i.onchange=up);
+$("cp").onclick=async()=>{try{await navigator.clipboard.writeText($("lo").textContent);$("cp").textContent="Скопировано"}catch(e){$("cp").textContent="Выдели текст вручную"}};
+
+const G=[
+["Ганк","Внезапное нападение нескольких героев на врага на линии."],
+["Фарм","Накопление золота и опыта: добивание крипов и нейтральных монстров."],
+["Ласт-хит","Последний удар по крипу, за него ты получаешь золото."],
+["Дени","Добить своего крипа, чтобы враг не получил опыт."],
+["Фид","Когда герой часто умирает и отдаёт врагам золото."],
+["Респаун","Возрождение героя после смерти. С ростом уровня время ожидания увеличивается."],
+["Рошан","Мощный нейтральный босс в яме на карте. Убийство даёт команде бонус."],
+["Аэгис","Предмет после убийства Рошана: даёт герою шанс вернуться после смерти."],
+["Варда","Наблюдательная вышка, которая показывает область на карте."],
+["Смок","Предмет, делающий твою команду невидимой для врагов на время."],
+["Пуш","Давление на линию: быстрое разрушение башен или убийство крипов."],
+["Ульт","Самое сильное умение героя, у него большое время перезарядки."]
+];
+function gl(q){q=q.toLowerCase();$("gl").innerHTML=G.filter(g=>!q||g[0].toLowerCase().includes(q)||g[1].toLowerCase().includes(q)).map(g=>`<div class="c tm"><b>${g[0]}</b><p>${g[1]}</p></div>`).join("")||`<div class="c"><p>Ничего не найдено</p></div>`}
+$("sr").oninput=e=>gl(e.target.value);gl("");
+
+const Q=[
+["У тебя мало здоровья, а рядом враги. Что делаешь?",["Лезу в бой, вдруг повезёт","Отхожу к башне или союзникам и восстанавливаюсь","Стою на месте и жду"],1,"Не умирай зря: смерть отнимает золото и время."],
+["Враг пропал с твоей линии. Что делаешь?",["Продолжаю как ни в чём не бывало","Играю осторожнее и смотрю на миникарту","Иду в чужой лес без обзора"],1,"Пропавший враг может зайти тебе за спину или помочь на другой линии."],
+["Союзник просит помощи в драке, а ты фармишь. Что делаешь?",["Игнорирую","Помогаю, если успеваю безопасно","Выключаю звук"],1,"Драки решают игру, но не рискуй, если не успеваешь."],
+["Тебя много раз убили на линии. Что делаешь?",["Делаю то же самое снова","Играю дальше от врага, добиваю крипов под башней, прошу помощи","Ругаюсь в чате"],1,"Меняй подход: упорство без изменений ничего не даёт."],
+["Хочешь пойти в лес врага, а вардов нет. Что делаешь?",["Иду без обзора","Беру союзника или ставлю варду","Бегу очень быстро"],1,"Без обзора лес врага опасен: засады случаются часто."],
+["Враги ломают башню, а ты на другой линии. Что делаешь?",["Не вмешиваюсь вообще","Оцениваю, успею ли помочь, иначе фармлю и отдаю башню","Бегу один на всех"],1,"Иногда лучше отдать башню, чем потерять героя."],
+["Союзник пишет в чат грубости. Что делаешь?",["Отвечаю тем же","Мьючу и играю дальше","Выхожу из игры"],1,"Мьют экономит нервы и помогает сосредоточиться."],
+["Что важнее всего для новичка?",["Выигрывать каждый бой","Учиться на ошибках и смотреть повторы","Не играть совсем"],1,"Каждая ошибка помогает расти, если ты её разобрал."]
+];
+let qi=0,qs=0;
+function sh(a){return a.map(v=>[Math.random(),v]).sort((x,y)=>x[0]-y[0]).map(x=>x[1])}
+function show(){
+const z=$("quiz");
+if(qi>=Q.length){const r=qs==8?"👑 Immortal":qs>=6?"🏆 Ancient":qs>=4?"🛡 Archon":"🌱 Herald";
+z.innerHTML=`<small>Результат</small><h3>${qs} из 8</h3><p class="fb">${r}</p><button class="nx" id="rs">Пройти ещё раз</button>`;
+$("rs").onclick=()=>{qi=0;qs=0;show()};return}
+const o=sh(Q[qi][1].map((t,i)=>[t,i]));
+z.innerHTML=`<small>Ситуация ${qi+1} из 8</small><p class="s">${Q[qi][0]}</p><div class="o">${o.map(x=>`<button data-r="${x[1]}">${x[0]}</button>`).join("")}</div><p class="fb" id="fb"></p>`;
+z.querySelectorAll("[data-r]").forEach(b=>b.onclick=()=>{
+const ok=+b.dataset.r===Q[qi][2];if(ok)qs++;
+z.querySelector(".o").style.display="none";
+$("fb").innerHTML=(ok?"✅ Верно. ":"❌ Не совсем. ")+Q[qi][3]+`<button class="nx" id="nx">Дальше</button>`;
+$("nx").onclick=()=>{qi++;show()}})}
+show();
+</script>
+</body>
+</html>
